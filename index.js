@@ -23,12 +23,15 @@ app.use("/courses", courseRoute);
 app.use("/lectures", lectureRoute);
 
 const connection = async () => {
-  mongoose.connect(process.env.MONGO, (err) => {
-    if (err) {
-      console.log(err);
+  mongoose.connect(
+    "mongodb+srv://neel1905:neel1905@cluster0.2mdg4wr.mongodb.net/lectureapp?retryWrites=true&w=majority",
+    (err) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log("Connected to Database");
     }
-    console.log("Connected to Database");
-  });
+  );
 };
 
 app.listen(process.env.SERVER || port, () => {
