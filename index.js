@@ -12,7 +12,11 @@ const lectureRoute = require("./routes/lectures");
 dotenv.config();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/users", userRoute);
 app.use("/courses", courseRoute);
@@ -27,7 +31,8 @@ const connection = async () => {
   });
 };
 
-app.listen(port, () => {
+app.listen(process.env.SERVER || port, () => {
   connection();
-  console.log(`App started on ${port}`);
+  // console.log(`App started on ${port}`);
+  console.log(`App started`);
 });
