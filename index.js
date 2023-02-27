@@ -2,14 +2,12 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const app = express();
 const port = 5000;
-const dotenv = require("dotenv");
+
 const cors = require("cors");
 
 const userRoute = require("./routes/users");
 const courseRoute = require("./routes/courses");
 const lectureRoute = require("./routes/lectures");
-
-dotenv.config();
 
 app.use(express.json());
 app.use(cors());
