@@ -10,7 +10,7 @@ const verifyToken = async (req, res, next) => {
   }
 
   try {
-    const verified = jwt.verify(token, "averysecretkey");
+    const verified = jwt.verify(token, process.env.SECRET);
     //   if (!verified) {
     //     return res.status(403).json({ message: "Forbidden", isSuccess: false });
     //   }
