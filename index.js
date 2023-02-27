@@ -12,11 +12,7 @@ const lectureRoute = require("./routes/lectures");
 dotenv.config();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://master--lucky-yeot-321d71.netlify.app",
-  })
-);
+app.use(cors());
 
 app.use("/users", userRoute);
 app.use("/courses", courseRoute);
