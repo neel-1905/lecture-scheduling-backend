@@ -34,7 +34,7 @@ const connection = async () => {
   );
 };
 
-app.listen(process.env.SERVER || port, () => {
+app.listen(port, () => {
   connection();
   // console.log(`App started on ${port}`);
   console.log(`App started`);
